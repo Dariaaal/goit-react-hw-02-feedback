@@ -20,3 +20,12 @@ ul{
 .button:not(:last-child){
     margin-right: 20px;
 }
+
+.message{
+    font-weight: 600;
+    font-size: 50px;
+}
+
+.title{
+    text-align: center;
+}

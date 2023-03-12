@@ -19,15 +19,4 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
     );
   };
 
-// const FeedbackOptions = ({options, onLeaveFeedback}) => {
-//     return <div>
-//                  <ul>
-//                      {options.map((option)=>(
-//                         <li key={nanoid()}><button type="button" className={css.button} 
-//                         onClick={onLeaveFeedback}>{option}</button></li>
-//                      ))}
-//                  </ul>
-//             </div>
-// }
-
 export default FeedbackOptions;
