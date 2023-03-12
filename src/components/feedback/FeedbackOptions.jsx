@@ -1,5 +1,4 @@
 import React from "react";
-import { nanoid } from 'nanoid'
 import css from './Feedback.module.css';
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
