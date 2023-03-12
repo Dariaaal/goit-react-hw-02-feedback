@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Statistics from "./feedback/Statistics";
-import Feedback from "./feedback/Feedback";
+import FeedbackOptions from "./feedback/FeedbackOptions";
 
 export const App = () => {
   return (
@@ -15,7 +15,7 @@ export const App = () => {
         color: '#010101'
       }}
     >
-      <Feedback/>
+      <FeedbackOptions/>
       <Statistics/>
     </div>
   );

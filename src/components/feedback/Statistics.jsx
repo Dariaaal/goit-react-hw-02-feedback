@@ -1,16 +1,14 @@
 import React, { Component } from "react";
 
-class Statistics extends Component {
-    render(){
-        return (
-             <div>
-                <h2>Statistics</h2>
-                <p>Good: </p>
-                <p>Neutral: </p>
-                <p>Bad: </p>
-             </div>
-        )
-    }
+const Statistics = ({good, neutral, bad}) => {
+    return <div>
+        <h2>Statistics</h2>
+        <ul>
+            <li>Good: {good}</li>
+            <li>Neutral: {neutral}</li>
+            <li>Bad: {bad}</li>
+        </ul>
+    </div>
 }
 
 export default Statistics;
