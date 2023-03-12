@@ -18,11 +18,6 @@ export class App extends Component {
      }))
   }
 
-  // countTotalFeedback = () => {
-  //    this.setState((prevState)=>({
-  //    }))
-  // }
-  
   render(){
     const {good, neutral, bad} = this.state;
     const total = good + neutral + bad;
