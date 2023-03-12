@@ -1,22 +1,53 @@
 import React, { Component } from "react";
 import Statistics from "./feedback/Statistics";
 import FeedbackOptions from "./feedback/FeedbackOptions";
+import Section from "./feedback/Section";
 
-export const App = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      <FeedbackOptions/>
-      <Statistics/>
-    </div>
-  );
-};
+export class App extends Component {
+  state = {
+    good: 0,
+    neutral: 0,
+    bad: 0
+  }
+
+  handleIncrement = (e) => {
+    const {name} = e.target
+     this.setState((prevState)=>({
+       [name]: prevState[name] + 1,
+     }))
+  }
+  
+  render(){
+    const {good, neutral, bad} = this.state;
+    const total = good + neutral + bad;
+    const positiveFeedback = +Math.round((good/total)*100);
+    return (
+      <div
+        style={{
+          height: '100vh',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          fontSize: 40,
+          color: '#010101'
+        }}
+      > 
+      <Section title='Please leave feedback'>
+        <FeedbackOptions
+        options={Object.keys(this.state)}
+        onLeaveFeedback={this.handleIncrement}/>
+      </Section>
+      <Section title='Statistics'>
+        <Statistics
+        good={this.state.good}
+        neutral={this.state.neutral}
+        bad={this.state.bad}
+        total={total}
+        positiveFeedback = {positiveFeedback}
+        />
+      </Section>
+      </div>
+    );
+  }
+}
