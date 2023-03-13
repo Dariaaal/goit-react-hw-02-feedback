@@ -30,8 +30,7 @@ export class App extends Component {
 
   render(){
     const {good, neutral, bad} = this.state;
-    // const total = good + neutral + bad;
-    // const positiveFeedback = +Math.round((good/total)*100);
+
     return (
       <div
         style={{
@@ -55,8 +54,8 @@ export class App extends Component {
         good={this.state.good}
         neutral={this.state.neutral}
         bad={this.state.bad}
-        total={this.countTotalFeedback}
-        // positiveFeedback = {positiveFeedback}
+        total={this.countTotalFeedback()}
+        positiveFeedback = {this.countPositiveFeedbackPercentage()}
         />)}
 
       </Section>
